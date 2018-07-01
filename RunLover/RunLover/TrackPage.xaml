@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="RunLover.TrackPage">
+    <ContentPage.Content>
+		<StackLayout Margin="16">
+			<maps:Map x:Name="map"
+					  IsShowingUser="true"
+					  HasZoomEnabled="false"
+					  HasScrollEnabled="false"
+					  VerticalOptions="FillAndExpand"
+					  HorizontalOptions="FillAndExpand" />
+			<StackLayout Orientation="Horizontal"
+						 HorizontalOptions="FillAndExpand" >
+				<Label x:Name="textDuration"
+					   Text="00:00:000"
+					   FontSize="32"
+					   FontAttributes="Bold"
+					   HorizontalOptions="StartAndExpand" />
+				<Label x:Name="textDistance"
+					   Text="0.00 m"
+					   FontSize="32"
+					   FontAttributes="Bold"
+					   HorizontalOptions="End"/>
+			</StackLayout>
+			<RelativeLayout HorizontalOptions="FillAndExpand"
+							VerticalOptions="End" >
+				<Button x:Name="buttonTrack"
+						Text="Track"
+						Clicked="OnTrackClick"
+						RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1,Constant=0}"/>
+				<StackLayout Orientation="Horizontal"
+							 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1,Constant=0}">
+					<Button x:Name="buttonSave"
+							Text="Save"
+							Clicked="OnSaveClick"
+							IsVisible="False"
+							HorizontalOptions="FillAndExpand" />
+					<Button x:Name="buttonReset"
+							Text="Reset"
+							Clicked="OnResetClick"
+							IsVisible="False"
+							HorizontalOptions="FillAndExpand" />
+				</StackLayout>
+			</RelativeLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

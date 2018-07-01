@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="RunLover.DetailPage">
+    <ContentPage.Content>
+        <StackLayout Margin="16">
+            <!--<Label Text="Welcome to Xamarin.Forms!"
+                VerticalOptions="StartAndExpand" 
+                HorizontalOptions="CenterAndExpand" />-->
+			<maps:Map x:Name="map"
+					  IsShowingUser="true"
+					  HasZoomEnabled="false"
+					  HasScrollEnabled="false"
+					  VerticalOptions="FillAndExpand"
+					  HorizontalOptions="FillAndExpand" />
+			<StackLayout Orientation="Horizontal"
+						 HorizontalOptions="FillAndExpand" >
+				<Label x:Name="textDuration"
+					   Text="Duration: 00:00:000"
+					   FontSize="24"
+					   FontAttributes="Bold"
+					   HorizontalOptions="StartAndExpand" />
+				<Label x:Name="textDate"
+					   Text="00/00/0000"
+					   FontSize="16"
+					   VerticalOptions="End"
+					   HorizontalOptions="End" />
+			</StackLayout>
+			<Label x:Name="textDistance"
+					   Text="Distance: 0.00 m"
+					   FontSize="24"
+					   FontAttributes="Bold"
+					   HorizontalOptions="FillAndExpand" />
+		</StackLayout>
+    </ContentPage.Content>
+</ContentPage>
