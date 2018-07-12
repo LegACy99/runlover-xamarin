@@ -18,6 +18,8 @@ namespace RunLover.iOS {
 
 			if (manager == null) {
 				manager = new CLLocationManager();
+				manager.RequestWhenInUseAuthorization();
+
 				manager.LocationsUpdated += (sender, e) => {
 					if (e.Locations.Length > 0) {
 						mPositionAvailable = true;
